@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/sal.js/dist/sal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <section class="main">
+      <div data-sal="slide-up" data-sal-delay="350" data-dal-easing="ease">Scroll</div>
+      <span data-sal-delay="350"></span>
+      <span data-sal-delay="450"></span>
+      <span data-sal-delay="550"></span>
+    </section>
+    <footer>
+      <div class="icons" data-sal-delay="300">
+        <i class="fab fa-instagram"></i>
+      </div>
+      <div class="icons" data-sal-delay="400">
+        <i class="fab fa-github"></i>
+      </div>
+      <div class="icons" data-sal-delay="500">
+        <i class="fab fa-twitter"></i>
+      </div>
+      <div class="icons" data-sal-delay="600">
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </footer>
+
+    <script src="./node_modules/sal.js/dist/sal.js"></script>
+    <script>
+      const span = document.querySelectorAll('span');
+      const icons = document.querySelectorAll('.icons');
+
+      span.forEach((e)=>{
+        e.setAttribute('data-sal', "slide-left");
+        e.setAttribute('data-sal-easing', "ease");
+      });
+      icons.forEach((e) => {
+        e.setAttribute('data-sal', "slide-left");
+        e.setAttribute('data-sal-easing', "ease-out-break");
+      });
+      sal({
+        threshold: 1,
+        once: false,
+      });
+    </script>
+  </body>
+</html>
